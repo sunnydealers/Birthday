@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You're Invited!</title>
+    <link rel="stylesheet" href="birthday.css">
+</head>
+<body>
+    <!-- Initial card with the button -->
+    <div id="initial-page" class="container">
+        <div class="card">
+            <h1>You're Invited!!</h1>
+            <p>For what??</p>
+            <button onclick="revealInvitation()">Click here to know!!</button>
+        </div>
+    </div>
+    
+    <!-- Hidden invitation content, revealed after clicking the button -->
+    <div id="invitation-page" class="container hidden">
+        <div class="invitation-content">
+            <h2>🎉 We invite you all for Devansh's <br> Birthday Celebration!! 🎉</h2>
+            <div class="photos">
+                <img src="parent.jpg" alt="Parents and [Son's Name]">
+                <img src="devansh.jpg" alt="[Son's Name]">
+            </div>
+            <p><strong>Venue:</strong>Vanaparthy</p>
+            <p><strong>Time:</strong> 7 pm</p>
+            <p><strong>Invited by:</strong>  Kalpanakanakaraju</p>
+            <button class="marquee-button">
+                <div class="marquee">
+                    <span>All are welcome ! Let's Celebrate Together </span>
+                    
+                    
+                </div>
+            </button>
+        </div>
+        <div id="confetti" class="confetti hidden"></div>
+    </div>
+
+    <script src="birthday.js"></script>
+</body>
+</html>
+
