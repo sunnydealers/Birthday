@@ -1,0 +1,194 @@
+/* Basic styles */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #ffe6e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #ff6a6a, #ffb6c1);
+    overflow: hidden;
+    transition: opacity 0.5s ease;
+}
+
+/* Hidden class to hide elements */
+.hidden {
+    opacity: 0;
+    display: none;
+}
+
+/* Initial card with the button */
+.container {
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    margin: auto;
+    transition: opacity 0.5s ease;
+}
+
+.card, .invitation-content {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+    border: 2px solid #ff6a6a;
+}
+
+/* Heading and Paragraph */
+.card h1, .card p {
+    margin: 0 0 20px 0;
+    color: #ff6a6a;
+    text-shadow: 2px 2px #ffb6c1;
+}
+
+.card h1 {
+    font-size: 2em;
+}
+
+/* Buttons */
+.card button,
+.marquee-button {
+    background-color: #ff6a6a;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.card button:hover,
+.marquee-button:hover {
+    background-color: #ff7f7f;
+    transform: scale(1.05);
+}
+
+.marquee-button {
+    margin-top: 20px;
+    width: 70%; /* Increased width */
+}
+
+/* Marquee text inside button */
+.marquee {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.marquee span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 10s linear infinite;
+    color: yellow; /* Text color for the marquee */
+    font-weight: bold;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Invitation content */
+.invitation-content {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+    border: 2px solid #ff6a6a;
+    animation: fadeIn 1s ease forwards;
+    opacity: 0;
+    position: relative;
+}
+
+.invitation-content h2 {
+    color: #ff6a6a;
+    text-shadow: 2px 2px #ffb6c1;
+    font-size: 1.8em;
+}
+
+.photos {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+.photos img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    border: 3px solid #ff6a6a;
+    transition: transform 0.3s ease;
+}
+
+.photos img:hover {
+    transform: scale(1.1);
+}
+
+/* Confetti */
+#confetti {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.confetti-piece {
+    position: absolute;
+    width: 10px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    opacity: 0;
+    animation: fall 3s infinite ease-in;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 1;
+    }
+}
+
+/* Animations */
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
